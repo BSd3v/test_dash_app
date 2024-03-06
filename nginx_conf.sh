@@ -1,6 +1,6 @@
 BASEDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-sudo apt-get install -y nginx
+apt-get install -y nginx
 
 cat <<EOF > /etc/nginx/proxy_params
 proxy_set_header Host \$http_host;
