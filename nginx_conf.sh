@@ -1,8 +1,6 @@
 BASEDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-apt-get install -y nginx
-
-mkdir -p /home/var/logs/nginx/
+sudo apt-get install -y nginx
 
 cat <<EOF > /etc/nginx/proxy_params
 proxy_set_header Host \$http_host;
@@ -30,9 +28,6 @@ server {
   proxy_send_timeout 60;
   proxy_headers_hash_max_size 512;
   proxy_headers_hash_bucket_size 128;
-
-#  access_log /home/var/logs/nginx/app.access.log;
-#  error_log /home/var/logs/nginx/app.error.log;
 
   location = /robots933456.txt {
     access_log off;

@@ -2,7 +2,7 @@ BASEDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 CORES=`echo "$(grep -c processor /proc/cpuinfo)"`
 
-apt-get install -y supervisor
+sudo apt-get install -y supervisor
 
 cat <<EOF > /etc/supervisor/conf.d/main.conf
 [program:main]
